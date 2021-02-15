@@ -1,12 +1,4 @@
-let login = "Сотрудник";
-
-let message =
-  login == "Сотрудник"
-    ? "Привет"
-    : login == "Директор"
-    ? "Здравствуйте"
-    : login == ""
-    ? "Нет логина"
-    : "";
-
-console.log(message);
+let number;
+do {
+  number = prompt("Число больше 100");
+} while (number < 100 && number);
