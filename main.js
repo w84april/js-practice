@@ -1,13 +1,14 @@
-// Напишите функцию checkSpam(str), возвращающую true, если str содержит 'viagra' или 'XXX', а иначе false.
+// Создайте функцию truncate(str, maxlength), которая проверяет длину строки str и, если она превосходит maxlength,
+// заменяет конец str на "…", так, чтобы её длина стала равна maxlength.
+// Результатом функции должна быть та же строка, если усечение не требуется, либо, если необходимо, усечённая строка.
 
-// Функция должна быть нечувствительна к регистру:
-
-function checkSpam(str) {
-  return (
-    str.toLowerCase().includes("viagra") || str.toLowerCase().includes("xxx")
-  );
+function truncate(str, maxlength) {
+  if (str.length >= maxlength) {
+    return str.slice(0, maxlength - 1) + "...";
+  } else {
+    return str;
+  }
 }
 
-console.log(checkSpam("buy ViAgRA now"));
-console.log(checkSpam("free xxxxx"));
-console.log(checkSpam("innocent rabbit"));
+console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
+console.log(truncate("Всем привет!", 20));
