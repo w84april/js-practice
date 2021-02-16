@@ -1,14 +1,12 @@
-//n^k
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130,
+};
+let sum = 0;
 
-let n = 0;
-let k = 3;
-
-function pow(n, k) {
-  if (n < 1) {
-    return "Введите число больше 0";
-  } else {
-    return n ** k;
-  }
+for (let key in salaries) {
+  sum = sum + salaries[key];
 }
 
-console.log(pow(n, k));
+console.log(sum);
