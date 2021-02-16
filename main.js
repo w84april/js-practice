@@ -1,14 +1,10 @@
-let browser = "Edge";
+//n^k
 
-if (browser === "Edge") {
-  console.log("You've got the Edge!");
-} else if (
-  browser === "Chrome" ||
-  browser === "Firefox" ||
-  browser === "Safari" ||
-  browser === "Opera"
-) {
-  console.log("Okay we support these browsers too");
-} else {
-  console.log("We hope that this page looks ok!");
+let n = 2;
+let k = 3;
+
+function pow(n, k) {
+  return n ** k;
 }
+
+console.log(pow(n, k));
