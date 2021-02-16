@@ -1,24 +1,27 @@
-// Создайте объект calculator (калькулятор) с тремя методами:
+// Напишите функцию-конструктор Accumulator(startingValue).
 
-//     read() (читать) запрашивает два значения и сохраняет их как свойства объекта.
-//     sum() (суммировать) возвращает сумму сохранённых значений.
-//     mul() (умножить) перемножает сохранённые значения и возвращает результат.
+// Объект, который она создаёт, должен уметь следующее:
 
-let calculator = {
-  number1: 0,
-  number2: 0,
-  read() {
-    this.number1 = prompt("Введите 1 число");
-    this.number2 = prompt("Введите 2 число");
-  },
-  sum() {
-    return +this.number1 + +this.number2;
-  },
-  mul() {
-    return this.number1 * this.number2;
-  },
-};
+//     Хранить «текущее значение» в свойстве value. Начальное значение устанавливается в аргументе конструктора startingValue.
+//     Метод read() использует prompt для получения числа и прибавляет его к свойству value.
 
-calculator.read();
-alert(calculator.sum());
-alert(calculator.mul());
+// Таким образом, свойство value является текущей суммой всего, что ввёл пользователь при вызовах метода read(), с учётом начального значения startingValue.
+
+function Accumulator(value) {
+  this.number,
+    (this.value = value),
+    (this.read = function () {
+      this.number = prompt("Число");
+      this.value = this.value + +this.number;
+    });
+}
+
+let accumulator = new Accumulator(0); // начальное значение 0
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+accumulator.read(); // прибавит ввод prompt к текущему значению
+
+alert(accumulator.value); // выведет сумму этих значений
