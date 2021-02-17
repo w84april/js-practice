@@ -1,26 +1,13 @@
-// Давайте произведём 5 операций с массивом.
+// Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
 
-//     Создайте массив styles с элементами «Джаз» и «Блюз».
-//     Добавьте «Рок-н-ролл» в конец.
-//     Замените значение в середине на «Классика». Ваш код для поиска значения в середине должен работать для массивов с любой длиной.
-//     Удалите первый элемент массива и покажите его.
-//     Вставьте «Рэп» и «Регги» в начало массива.
+// То есть дефисы удаляются, а все слова после них получают заглавную букву.
 
-// Массив по ходу выполнения операций:
+function camelize(str) {
+  firstElement = str.split("-").slice(0, 1);
+  let otherElements = str.split("-").slice(1).map((item) => item[0].toUpperCase() + item.slice(1)).join("");
+  return (firstElement + otherElements)
 
-// Джаз, Блюз
-// Джаз, Блюз, Рок-н-ролл
-// Джаз, Классика, Рок-н-ролл
-// Классика, Рок-н-ролл
-// Рэп, Регги, Классика, Рок-н-ролл
-
-let styles = ["Джаз", "Блюз"];
-console.log(styles);
-styles.push("Рок-н-ролл");
-console.log(styles);
-styles[Math.floor(styles.length / 2)] = "Классика";
-console.log(styles);
-styles.shift();
-console.log(styles);
-styles.unshift("Рэп", "Регги");
-console.log(styles);
+  console.log(firstElement);
+  console.log(otherElements);
+}
+console.log(camelize("list-style-image"));
