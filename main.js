@@ -1,13 +1,13 @@
-// Напишите функцию camelize(str), которая преобразует строки вида «my-short-string» в «myShortString».
+//У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
 
-// То есть дефисы удаляются, а все слова после них получают заглавную букву.
+let arr = ["HTML", "JavaScript", "CSS"];
 
-function camelize(str) {
-  firstElement = str.split("-").slice(0, 1);
-  let otherElements = str.split("-").slice(1).map((item) => item[0].toUpperCase() + item.slice(1)).join("");
-  return (firstElement + otherElements)
-
-  console.log(firstElement);
-  console.log(otherElements);
+function copySorted(arr) {
+  let newArr = arr.slice(0);
+  return newArr.sort();
 }
-console.log(camelize("list-style-image"));
+
+let sorted = copySorted(arr);
+
+console.log(sorted); // CSS, HTML, JavaScript
+console.log(arr); // HTML, JavaScript, CSS (без изменений)
